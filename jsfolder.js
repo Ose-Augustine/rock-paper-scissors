@@ -11,6 +11,16 @@ function singleRound(playerSelection,computerSelection=computerPlay()){
         return `You Lose ${computerSelection} beats ${playerSelection}`
     }else if(player=='paper'&& computer=='rock'){
         return `You win ${playerSelection} beats ${computerSelection}`;
+    }else if (player=='scissors' && computer=='rock'){
+        return `You lose ${computerSelection} beats ${playerSelection}`;
+    }else if (player=='rock' && computer=='scissors'){
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    }else if (player=='paper' && computer=='scissors'){
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
+    }else if (player=='scissors'&& computer=='paper'){
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    }else{
+        return "Draw"
     }
     
 }
