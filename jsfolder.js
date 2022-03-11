@@ -1,6 +1,16 @@
 function computerPlay(){
     let possibleReturns=['Rock','Paper','Scissors'];
+    //generate a random element from the list
     const random=Math.floor(Math.random()*possibleReturns.length);
     return (random,possibleReturns[random]);
 }
-console.log("hello you")
+function singleRound(playerSelection,computerSelection=computerPlay()){
+    const player=playerSelection.toLowerCase();
+    const computer=computerSelection.toLowerCase();
+    if (player=='rock'&& computer=='paper'){
+        return `You Lose ${computerSelection} beats ${playerSelection}`
+    }else if(player=='paper'&& computer=='rock'){
+        return `You win ${playerSelection} beats ${computerSelection}`;
+    }
+    
+}
