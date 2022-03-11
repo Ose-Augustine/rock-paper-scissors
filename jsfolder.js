@@ -4,7 +4,7 @@ function computerPlay(){
     const random=Math.floor(Math.random()*possibleReturns.length);
     return (random,possibleReturns[random]);
 }
-function singleRound(playerSelection,computerSelection=computerPlay()){
+function playRound(playerSelection,computerSelection=computerPlay()){
     const player=playerSelection.toLowerCase();
     const computer=computerSelection.toLowerCase();
     if (player=='rock'&& computer=='paper'){
@@ -23,4 +23,7 @@ function singleRound(playerSelection,computerSelection=computerPlay()){
         return "Draw"
     }
     
+}
+function game(){
+
 }
