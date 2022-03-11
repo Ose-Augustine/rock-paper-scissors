@@ -25,5 +25,9 @@ function playRound(playerSelection,computerSelection=computerPlay()){
     
 }
 function game(){
-
+    let playerSelection=prompt("Your turn,", "");
+    for(i=0;i < 5;i++){
+        let round=playRound(playerSelection);
+        console.log(round);
+    }
 }
