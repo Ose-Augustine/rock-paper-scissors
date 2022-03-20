@@ -24,16 +24,35 @@ function playRound(playerSelection,computerSelection=computerPlay()){
     }
     
 }
+function automation(){
+    let list=['rock','paper','scissors'];
+    for(char of list){
+        for (let i=0;i < 5;i++){
+            playRound(char);
+        }
+    }
+}
 const div=document.querySelector("div");
 const firstButton=document.createElement("div");
 const secondButton=document.createElement("div");
 const thirdButton=document.createElement("div");
 
-const btn0=document.querySelector("#first");
-btn0.addEventListener('click',function(){
-    firstButton.textContent=(playRound('rock'));
-},false);
-div.append(firstButton)
+const buttons=document.querySelectorAll('button');
+let list=['rock','paper','scissors'];
+let buttonResults=[firstButton,secondButton,thirdButton];
+buttons.forEach((button)=>{
+    i=0;
+    while(i < list.length){
+        let selection=list[i];
+        let buttonSelection=buttonResults[i];
+        button.addEventListener('click',function(){
+            buttonSelection.textContent=playRound(selection);
+        },false);
+        i++;
+    };
+});
+div.append(firstButton,secondButton,thirdButton);
+
 
 // function game(){
 //     for(i=0;i < 5;i++){
