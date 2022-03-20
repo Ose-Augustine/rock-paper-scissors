@@ -24,19 +24,17 @@ function playRound(playerSelection,computerSelection=computerPlay()){
     }
     
 }
-const btn=document.querySelector("#first");
-btn.addEventListener("click",()=>{
-    console.log(playRound('rock'));
-})
-const btn1=document.querySelector("#second");
-btn1.addEventListener("click",()=>{
-    console.log(playRound('paper'));
-}
-)
-const btn2=document.querySelector("#third");
-btn2.addEventListener("click",()=>{
-    console.log(playRound('scissors'));
-})
+const div=document.querySelector("div");
+const firstButton=document.createElement("div");
+const secondButton=document.createElement("div");
+const thirdButton=document.createElement("div");
+
+const btn0=document.querySelector("#first");
+btn0.addEventListener('click',function(){
+    firstButton.textContent=(playRound('rock'));
+},false);
+div.append(firstButton)
+
 // function game(){
 //     for(i=0;i < 5;i++){
 //         let playerSelection=prompt("Your turn,", "");
