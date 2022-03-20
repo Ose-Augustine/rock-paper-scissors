@@ -24,10 +24,23 @@ function playRound(playerSelection,computerSelection=computerPlay()){
     }
     
 }
-function game(){
-    for(i=0;i < 5;i++){
-        let playerSelection=prompt("Your turn,", "");
-        let round=playRound(playerSelection);
-        console.log(round);
-    }
+const btn=document.querySelector("#first");
+btn.addEventListener("click",()=>{
+    console.log(playRound('rock'));
+})
+const btn1=document.querySelector("#second");
+btn1.addEventListener("click",()=>{
+    console.log(playRound('paper'));
 }
+)
+const btn2=document.querySelector("#third");
+btn2.addEventListener("click",()=>{
+    console.log(playRound('scissors'));
+})
+// function game(){
+//     for(i=0;i < 5;i++){
+//         let playerSelection=prompt("Your turn,", "");
+//         let round=playRound(playerSelection);
+//         console.log(round);
+//     }
+// }
