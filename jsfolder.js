@@ -33,31 +33,26 @@ function automation(){
     }
 }
 const div=document.querySelector("div");
-const firstButton=document.createElement("div");
-const secondButton=document.createElement("div");
-const thirdButton=document.createElement("div");
+const rock=document.createElement("div");
+const paper=document.createElement("div");
+const scissors=document.createElement("div");
 
 const buttons=document.querySelectorAll('button');
 let list=['rock','paper','scissors'];
-let buttonResults=[firstButton,secondButton,thirdButton];
-buttons.forEach((button)=>{
-    i=0;
-    while(i < list.length){
-        let selection=list[i];
-        let buttonSelection=buttonResults[i];
-        button.addEventListener('click',function(){
-            buttonSelection.textContent=playRound(selection);
-        },false);
-        i++;
-    };
-});
-div.append(firstButton,secondButton,thirdButton);
+// let buttonResults=[firstButton,secondButton,thirdButton];
 
+const btn0=document.querySelector("#first");
+btn0.addEventListener('click',function(){
+    rock.textContent=(playRound('rock'));
+})
+const btn1=document.querySelector("#second");
+btn1.addEventListener('click',function(){
+    paper.textContent=(playRound('paper'));
+})
+const btn2=document.querySelector("#third");
+btn2.addEventListener('click',function(){
+    scissors.textContent=(playRound('scissors'));
+})
 
-// function game(){
-//     for(i=0;i < 5;i++){
-//         let playerSelection=prompt("Your turn,", "");
-//         let round=playRound(playerSelection);
-//         console.log(round);
-//     }
-// }
+  div.append(rock,paper,scissors);
+
