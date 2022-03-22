@@ -32,6 +32,7 @@ const scissors=document.createElement("div");
 
 const list=['rock','paper','scissors'];
 const buttonIds=['#first','#second','#third'];
+const buttonElement=document.querySelectorAll('button');
 
 let buttonResults=[rock,paper,scissors];
 //to play a round and display game status i.e win, lose or draw.
@@ -44,11 +45,17 @@ for(let i=0;i < 3;i++){
         buttonDiv.textContent=playRound(playerChoice);
         if (buttonDiv.textContent.includes('win')){
             counter += 1;
-            alert(`Win counter = ${counter}`);
-        }
+        };
     })//function() for functions that have parameters to fire in event listener
 }//buttonDiv is what is defining i(used in the loop) as the debugger show
 
 div.append(rock,paper,scissors);
 
 //to display the running score and winner at the end of five rounds
+let count=0;
+buttonElement.forEach((button)=>{
+    button.addEventListener('click',function(){
+    count ++;
+    alert(`clicks ${count}`);
+});
+})
