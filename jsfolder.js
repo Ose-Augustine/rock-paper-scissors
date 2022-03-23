@@ -33,20 +33,27 @@ const scissors=document.createElement("div");
 const list=['rock','paper','scissors'];
 const buttonIds=['#first','#second','#third'];
 const buttonElement=document.querySelectorAll('button');
+const results=document.querySelectorAll('#results')
 
 let buttonResults=[rock,paper,scissors];
 //to play a round and display game status i.e win, lose or draw.
+let winCounter=0;
+let loseCounter=0;
 for(let i=0;i < 3;i++){
-    let counter=0;
     const buttons=document.querySelector(buttonIds[i]);//for each button in the buttonIds
     const playerChoice=list[i];//selects from the list at index i
     const buttonDiv=buttonResults[i];
     buttons.addEventListener('click',function(){
         buttonDiv.textContent=playRound(playerChoice);
         if (buttonDiv.textContent.includes('win')){
-            counter += 1;
-        };
+            winCounter += 1;
+        }else if(buttonDiv.textContent.includes('lose')){
+            loseCounter +=1;
+        }
     })//function() for functions that have parameters to fire in event listener
+
+    
+
 }//buttonDiv is what is defining i(used in the loop) as the debugger show
 
 div.append(rock,paper,scissors);
@@ -55,7 +62,11 @@ div.append(rock,paper,scissors);
 let count=0;
 buttonElement.forEach((button)=>{
     button.addEventListener('click',function(){
-    count ++;
-    alert(`clicks ${count}`);
-});
+        if (winCounter==5 || loseCounter==5){
+            alert (`player Score ${winCounter}
+        Computer Score${loseCounter}`);  
+
+        }
+    });
 })
+
